@@ -1,0 +1,30 @@
+.list {
+  width: 272px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contact {
+  display: block;
+}
+.text {
+  margin: 0;
+}
+.my-icon {
+  margin-right: 8px;
+}
+.btn {
+  border: 1px solid #757373;
+  border-radius: 4px;
+  background: rgb(218, 215, 215);
+  width: 80px;
+  height: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin: 0;
+}

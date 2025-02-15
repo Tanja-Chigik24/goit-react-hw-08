@@ -1,0 +1,13 @@
+.box {
+  display: block;
+  width: 300px;
+}
+.label {
+  width: 300px;
+  margin-left: 0;
+}
+
+.input {
+  width: 300px;
+  margin: 4px 0 20px 0;
+}
