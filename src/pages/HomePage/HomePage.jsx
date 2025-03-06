@@ -1,4 +1,5 @@
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+import photo from "../../../public/images/iPhone_contacts.png";
 import css from "../HomePage/HomePage.module.css";
 
 export default function HomePage() {
@@ -6,11 +7,7 @@ export default function HomePage() {
     <>
       <DocumentTitle>Home</DocumentTitle>
       <div className={css.container}>
-        <img
-          src="../../public/images/iPhone_contacts.png"
-          alt=""
-          className={css.imgPhoneBook}
-        />
+        <img src={photo} alt="" className={css.imgPhoneBook} />
         <h1 className={css.title}>Welcome to super Phonebook</h1>
       </div>
     </>
