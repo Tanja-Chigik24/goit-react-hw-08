@@ -1,13 +1,20 @@
 .box {
-  display: block;
   width: 300px;
+  margin: 0 auto;
 }
 .label {
+  display: flex;
   width: 300px;
-  margin-left: 0;
+  margin: 0 auto;
+  font-size: 18px;
 }
 
 .input {
-  width: 300px;
-  margin: 4px 0 20px 0;
+  display: flex;
+  width: 280px;
+  font: inherit;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: 1px solid #757373;
+  font-size: 18px;
 }

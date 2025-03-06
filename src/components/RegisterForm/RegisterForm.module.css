@@ -1,15 +1,14 @@
 .form {
   display: flex;
+  width: 320px;
   flex-direction: column;
   gap: 12px;
   border: 1px solid #2a2a2a;
   border-radius: 4px;
-  width: 320px;
-  padding: 8px 12px;
+  padding: 8px;
   margin: 0 auto;
   background-color: rgb(235, 227, 217);
 }
-
 .field {
   display: flex;
   width: 280px;
@@ -19,19 +18,27 @@
   border: 1px solid #2a2a2a;
   margin: 0 auto;
 }
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
 .error {
   font-size: 14px;
   color: orangered;
 }
+
 .btn {
+  display: flex;
   border: none;
   font: inherit;
   cursor: pointer;
   outline: none;
   border-radius: 4px;
   background: rgba(70, 81, 230, 0.849);
-  width: 186px;
+  width: 80px;
   padding: 8px 12px;
+  justify-content: center;
   margin: 0 auto;
   color: #fff;
 }

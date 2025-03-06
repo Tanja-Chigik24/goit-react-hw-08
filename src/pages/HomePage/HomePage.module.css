@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 50px);
+  align-items: center;
+  justify-content: center;
+  color: hwb(195 95% 3%);
+  background-color: rgba(70, 81, 230, 0.849);
+}
+.title {
+  font-weight: 700;
+  font-size: 52px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.imgPhoneBook {
+  display: flex;
+  width: 420px;
+  height: 420px;
+  align-items: center;
+  justify-content: center;
+}

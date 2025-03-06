@@ -1,6 +1,14 @@
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import toast from "react-hot-toast";
 import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { addContact, patchContact } from "../../redux/contacts/operations";
+import { cancel } from "../../redux/contacts/slice";
+import {
+  selectIsUpdating,
+  selectSelectedContact,
+} from "../../redux/contacts/selectors";
 import css from "./ContactForm.module.css";
 
 const UserSchema = Yup.object().shape({
@@ -14,17 +22,43 @@ const UserSchema = Yup.object().shape({
     .required("Required"),
 });
 
-import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
-
-export const ContactForm = () => {
+export default function ContactForm() {
+  const contactEdit = useSelector(selectSelectedContact);
   const dispatch = useDispatch();
+  const updatingContact = useSelector(selectIsUpdating);
+  const onClick = () => {
+    dispatch(cancel());
+  };
   const handleSubmit = (values, actions) => {
-    dispatch(
-      addContact({
-        name: values.username,
-        number: values.number,
-      }));
+    if (updatingContact) {
+      dispatch(
+        patchContact({
+          contactId: contactEdit.id,
+          data: { name: values.username, number: values.number },
+        })
+      );
+      toast.success("Contact updated!", {
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    } else {
+      dispatch(
+        addContact({
+          name: values.username,
+          number: values.number,
+        })
+      );
+      toast.success("Contact added!", {
+        style: {
+          borderRadius: "10px",
+          background: "#2112",
+          color: "##fff",
+        },
+      });
+    }
     actions.resetForm();
   };
 
@@ -34,7 +68,7 @@ export const ContactForm = () => {
     username: "",
     number: "",
   };
-  
+
   return (
     <Formik
       initialValues={initialValues}
@@ -50,6 +84,7 @@ export const ContactForm = () => {
             name="username"
             id={nameFieldId}
             placeholder="Enter contact text..."
+            required
           />
           <ErrorMessage
             className={css.error}
@@ -64,13 +99,20 @@ export const ContactForm = () => {
             type="text"
             name="number"
             id={numberFieldId}
+            placeholder="Enter contact number..."
+            required
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
         <button type="submit" className={css.btn}>
-          Add contact
+          {updatingContact ? "Update contact" : "Add a new contact"}
         </button>
+        {updatingContact && (
+          <button type="submit" className={css.btn} onClick={onClick}>
+            Cancel
+          </button>
+        )}
       </Form>
     </Formik>
   );
-};
+}

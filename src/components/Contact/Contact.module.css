@@ -1,30 +1,47 @@
 .list {
-  width: 272px;
-  border: 1px solid black;
+  min-width: 300px;
+  border: 1px solid #2a2a2a;
   border-radius: 4px;
   padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
 }
 
 .contact {
   display: block;
+  border: 1px solid rgba(70, 81, 230, 0.849);
 }
 .text {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-.my-icon {
-  margin-right: 8px;
+.myIcon {
+  margin-right: 4px;
+  size: 20px;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 227, 217);
 }
 .btn {
-  border: 1px solid #757373;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
   border-radius: 4px;
-  background: rgb(218, 215, 215);
+  background: rgba(70, 81, 230, 0.849);
   width: 80px;
-  height: 32px;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin: 0;
+  padding: 8px 12px;
+  margin-left: 28px;
+  margin-right: 28px;
+  color: #fff;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #303f9f;
+}
+
+.btn:active {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }

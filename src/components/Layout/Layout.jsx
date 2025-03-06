@@ -1,10 +1,17 @@
+import { Suspense } from "react";
+import AppBar from "../AppBar/AppBar";
+import { Toaster } from "react-hot-toast";
+import Loader from "../../components/Loader/Loader";
 import css from "./Layout.module.css";
 
-export const Layout = ({ children }) => {
+export default function Layout({ children }) {
   return (
-    <main className={css.container}>
-      <h1>Phonebook</h1>
-      {children}
-    </main>
+    <div className={css.container}>
+      <AppBar />
+      <Suspense fallback={<Loader />}>
+        {children}
+        <Toaster position="top-center" reverse-order={false} />
+      </Suspense>
+    </div>
   );
-};
+}

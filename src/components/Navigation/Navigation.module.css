@@ -1,0 +1,14 @@
+.link {
+  display: inline-flex;
+  padding: 14px;
+  font-size: 18px;
+  margin-left: 14px;
+  text-decoration: none;
+}
+.link:hover {
+  color: #e84a5f;
+}
+.active {
+  background-color: rgb(5, 180, 180);
+  color: #fff;
+}

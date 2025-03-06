@@ -1,8 +1,6 @@
 .container {
   display: grid;
-  gap: 16px;
-  max-width: 1440px;
+  gap: 8px;
+  max-width: 960px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
 }
